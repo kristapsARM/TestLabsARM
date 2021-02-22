@@ -20,7 +20,7 @@ $outpath = "$installPath\ExchangeCertificatesTemp.zip"
 $url = "https://github.com/win-acme/win-acme/releases/download/v2.1.13.1/win-acme.v2.1.13.978.x64.pluggable.zip"
 Invoke-WebRequest -Uri $url -OutFile $outpath
 
-$path = $installPath+"\2.ExchangeCertificates"
+$path = "$installPath\2.ExchangeCertificates"
 If(!(test-path $path))
 {
       New-Item -ItemType Directory -Force -Path $path
@@ -39,6 +39,7 @@ https://microsoft.sharepoint.com/teams/OfficePeople/_layouts/OneNote.aspx?id=%2F
 2. Set up Exchange Certificates `n
 3. Set up Azure AD Connect `n
 4. Set up Exchange Hybrid `n
+Test `n
 "@
 
 $txtOutput | out-file -filepath $installPath\README.txt -append -width 200
