@@ -2,6 +2,6 @@
     "itemDisplayName": "Deploy Exchange on a Windows Server VM on Azure",
     "description": "Deploy Exchange on a Windows Server VM on Azure",
     "summary": "This template has default values for all the parameters",
-    "githubUsername": "nimsim",
-    "dateUpdated": "2019-01-03"
+    "githubUsername": "kristapsARM",
+    "dateUpdated": "2021-03-02"
 }
