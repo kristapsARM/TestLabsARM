@@ -390,7 +390,7 @@
             }
         },
         {
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2018-10-01",
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "[concat(variables('vmName'),'/dscExtension')]",
             "location": "[variables('location')]",
@@ -401,7 +401,7 @@
             "properties": {
                 "publisher": "Microsoft.Powershell",
                 "type": "DSC",
-                "typeHandlerVersion": "2.15",
+                "typeHandlerVersion": "2.77",
                 "autoUpgradeMinorVersion": true,
                 "settings": {
                     "modulesUrl": "[variables('modulesUrlExchange')]",
