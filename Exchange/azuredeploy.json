@@ -65,6 +65,10 @@
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[tolower(variables('uniqueStorageAccountName'))]",
             "location": "[variables('location')]",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "Storage",
             "properties": {
                 "accountType": "[variables('storageAccountType')]"
             }
