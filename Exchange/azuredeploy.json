@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "domainName": {
@@ -30,7 +30,7 @@
         "uniqueStorageAccountName": "[tolower(concat('sa', resourceGroup().name))]",
         "uniqueStorageAccountContainerName": "[tolower(concat('sc', resourceGroup().name))]",
         "location": "[resourceGroup().location]",
-        "vmOsSku": "2016-Datacenter",
+        "vmOsSku": "2019-Datacenter",
         "vmAdminUsername": "sdfadm",
         "vmAdminPassword": "k5ws2REYRRU%ae1u",
         "vmName": "[concat('vm', resourceGroup().name)]",
@@ -61,7 +61,7 @@
     },
     "resources": [
         {
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2019-06-01",
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[tolower(variables('uniqueStorageAccountName'))]",
             "location": "[variables('location')]",
@@ -70,7 +70,7 @@
             }
       },
         {
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2020-06-01",
             "type": "Microsoft.Network/publicIPAddresses",
             "name": "[concat(variables('publicIPAddressName'))]",
             "location": "[variables('location')]",
@@ -82,7 +82,7 @@
             }
         },
         {
-            "apiVersion": "2018-08-01",
+            "apiVersion": "2020-06-01",
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('nsgName')]",
             "location": "[variables('location')]",
@@ -125,7 +125,7 @@
             }
         },
         {
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2020-06-01",
             "type": "Microsoft.Network/virtualNetworks",
             "name": "[variables('virtualNetworkName')]",
             "location": "[variables('location')]",
@@ -150,7 +150,7 @@
             }
         },
         {
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2020-06-01",
             "type": "Microsoft.Network/networkInterfaces",
             "name": "[variables('vmNicName')]",
             "location": "[variables('location')]",
@@ -299,7 +299,7 @@
       }
      },
         {
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2020-06-01",
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[variables('vmName')]",
             "location": "[variables('location')]",
