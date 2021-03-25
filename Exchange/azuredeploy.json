@@ -61,9 +61,9 @@
     },
     "resources": [
         {
+            "name": "[tolower(variables('uniqueStorageAccountName'))]",
             "apiVersion": "2019-06-01",
             "type": "Microsoft.Storage/storageAccounts",
-            "name": "[tolower(variables('uniqueStorageAccountName'))]",
             "location": "[variables('location')]",
             "sku": {
                 "name": "Standard_LRS"
@@ -74,7 +74,7 @@
             }
       },
         {
-            "apiVersion": "2020-06-01",
+            "apiVersion": "2020-08-01",
             "type": "Microsoft.Network/publicIPAddresses",
             "name": "[concat(variables('publicIPAddressName'))]",
             "location": "[variables('location')]",
@@ -86,7 +86,7 @@
             }
         },
         {
-            "apiVersion": "2020-06-01",
+            "apiVersion": "2020-08-01",
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('nsgName')]",
             "location": "[variables('location')]",
@@ -368,7 +368,7 @@
             }
         },
 		{
-            "apiVersion": "2015-06-15",
+            "apiVersion": "2020-12-01",
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "[concat(variables('vmName'),'/CustomScriptExtension')]",
             "location": "[variables('location')]",
@@ -390,7 +390,7 @@
             }
         },
         {
-            "apiVersion": "2018-10-01",
+            "apiVersion": "2020-12-01",
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "[concat(variables('vmName'),'/dscExtension')]",
             "location": "[variables('location')]",
