@@ -53,7 +53,7 @@
 	"loadbalancerName": "[tolower(concat('lb', resourceGroup().name))]",
 	"rdpPort": "65221",
         "exchangeInstallerPath": "InstallerExchange",
-        "exchangeISOUri": "https://download.microsoft.com/download/0/b/7/0b702b8b-03ab-4553-9e2c-c73bb0c8535f/ExchangeServer2016-x64-CU20.ISO",
+        "exchangeISOUri": "https://download.microsoft.com/download/6/6/F/66F70200-E2E8-4E73-88F9-A1F6E3E04650/ExchangeServer2016-x64-cu11.iso",
         "modulesExchangeISODownload": "CSDownloadISO.ps1",
         "modulesUrlExchangeISODownload": "[concat(variables('modulesPath'),variables('modulesExchangeISODownload'))]",
 	"modulesAADConnectCertificateDownload": "aadccert.ps1",
