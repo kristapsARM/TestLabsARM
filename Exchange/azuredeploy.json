@@ -14,7 +14,7 @@
             "metadata": {
                 "description": "Exchange Mailbox storage size in GB."
             },
-	    "defaultValue": 50
+	    "defaultValue": 60
         }
     },	  
     "variables": {
