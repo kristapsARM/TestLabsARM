@@ -21,7 +21,7 @@
         "imagePublisher": "MicrosoftWindowsServer",
         "imageOffer": "WindowsServer",
         "addressPrefix": "10.0.0.0/16",
-        "storageAccountType": "Standard_D8_v4",
+        "storageAccountType": "Standard_D4",
         "publicIPAddressName": "[tolower(concat('ip', resourceGroup().name))]",
         "publicIPAddressType": "Dynamic",
         "subnetPrefix": "10.0.0.0/24",
@@ -36,7 +36,7 @@
         "vmName": "[concat('vm', resourceGroup().name)]",
         "vmOsDiskName": "[concat('od', resourceGroup().name)]",
         "vmDataDiskName": "[concat('dd', resourceGroup().name)]",
-        "vmSize": "Standard_D8_v4",
+        "vmSize": "Standard_D4",
         "vmDataDiskSize": "40",
         "vmNicName": "[tolower(concat('nc', resourceGroup().name))]",
         "virtualNetworkName": "[tolower(concat('vn', resourceGroup().name))]",
@@ -404,6 +404,7 @@
                 "typeHandlerVersion": "2.77",
                 "autoUpgradeMinorVersion": true,
                 "settings": {
+                    "wmfVersion": "latest",
                     "modulesUrl": "[variables('modulesUrlExchange')]",
                     "configurationFunction": "[variables('configurationFunctionExchange')]",
                     "properties": {
