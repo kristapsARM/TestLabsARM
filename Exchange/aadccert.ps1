@@ -20,6 +20,28 @@ $outpath = "$installPath\ExchangeCertificatesTemp.zip"
 $url = "https://github.com/win-acme/win-acme/releases/download/v2.1.13.1/win-acme.v2.1.13.978.x64.pluggable.zip"
 Invoke-WebRequest -Uri $url -OutFile $outpath
 
+$outpath = "$installPath\ndp48-x86-x64-allos-enu.exe"
+$url = "https://download.visualstudio.microsoft.com/download/pr/014120d7-d689-4305-befd-3cb711108212/0fd66638cde16859462a6243a4629a50/ndp48-x86-x64-allos-enu.exe"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+$arguments="/q /norestart"
+Start-Process -FilePath $outpath -ArgumentList $arguments -Wait -PassThru
+
+$outpath = "$installPath\vcredist_x64.exe"
+$url = "https://www.microsoft.com/en-us/download/confirmation.aspx?id=30679&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+$arguments="-q"
+Start-Process -FilePath $outpath -ArgumentList $arguments -Wait -PassThru
+
+Install-WindowsFeature Server-Media-Foundation
+
+$outpath = "$installPath\UcmaRuntimeSetup.exe"
+$url = "https://download.microsoft.com/download/2/C/4/2C47A5C1-A1F3-4843-B9FE-84C0032C61EC/UcmaRuntimeSetup.exe"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+$arguments="-q"
+Start-Process -FilePath $outpath -ArgumentList $arguments -Wait -PassThru
+
+Install-WindowsFeature Server-Media-Foundation, NET-Framework-45-Features, RPC-over-HTTP-proxy, RSAT-Clustering, RSAT-Clustering-CmdInterface, RSAT-Clustering-Mgmt, RSAT-Clustering-PowerShell, WAS-Process-Model, Web-Asp-Net45, Web-Basic-Auth, Web-Client-Auth, Web-Digest-Auth, Web-Dir-Browsing, Web-Dyn-Compression, Web-Http-Errors, Web-Http-Logging, Web-Http-Redirect, Web-Http-Tracing, Web-ISAPI-Ext, Web-ISAPI-Filter, Web-Lgcy-Mgmt-Console, Web-Metabase, Web-Mgmt-Console, Web-Mgmt-Service, Web-Net-Ext45, Web-Request-Monitor, Web-Server, Web-Stat-Compression, Web-Static-Content, Web-Windows-Auth, Web-WMI, Windows-Identity-Foundation, RSAT-ADDS
+
 $path = "$installPath\2.ExchangeCertificates"
 If(!(test-path $path))
 {
